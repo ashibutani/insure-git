@@ -1,0 +1,2185 @@
+@charset "utf-8";
+
+/******* 全てに適用 ********/
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    //width: 100%;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    color: #333;
+
+}
+
+
+
+a:hover {
+    cursor: pointer;
+}
+
+.anchor {
+    display: block;
+
+    padding-top: 20px;
+    margin-top: -20px;
+}
+
+/******* ローディング ********/
+
+
+#splash {
+    /*fixedで全面に固定*/
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    text-align: center;
+    //color: #3f1f7d;
+
+}
+
+/* Loadingバー中央配置　*/
+#splash_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    //z-index: 10000;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    //color: #28a689;
+
+}
+
+/*IE11対策用バーの線の高さ*/
+#splash_text svg {
+    height: 2px;
+}
+
+
+
+
+
+
+
+/* *******header**************** */
+.headerWrapper {
+    width: 100%;
+    height: 100px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+}
+
+.sp_nav {
+    display: none;
+}
+
+.hm_menu {
+    display: none;
+}
+
+.logo_box {
+    display: flex;
+    margin-left: 20px;
+    height: 51px;
+    width: fit-content;
+}
+
+.logo {
+    margin-right: 14px;
+    width: 50px;
+}
+
+.logo_textbox {
+    color: #3E4F3C;
+    height: 51px;
+    display: grid;
+}
+
+.logo_en {
+    font-size: 20px;
+    line-height: 28.96px;
+    padding-top: 3px;
+}
+
+.logo_ja {
+    font-size: 12px;
+    line-height: 17.38px;
+    display: grid;
+    align-items: end;
+}
+
+/* nav */
+.pc_nav {
+
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 8px;
+}
+
+ul {
+    display: flex;
+}
+
+.list3 li {
+    margin-right: 29px;
+    color: #333;
+}
+
+.list2_1 {
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    background: #E8DDC4;
+    margin-right: 12px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.list2_2 {
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+
+    margin-right: 12px;
+    text-align: center;
+    line-height: 50px;
+    background: #F48364;
+}
+
+
+/* **ヘッダー追従**** */
+body {
+    //height: 1000px;
+}
+
+.headerWrapper--sticky {
+    position: fixed;
+    height: 100px;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+    animation: slideDown 0.3s ease-in-out;
+
+}
+
+.headerWrapper--sticky .list3 {
+    color: #333;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+
+
+/* ーーーーーーーーーーーーーーーー */
+/* ーーーモーダルーーーーーーー */
+/* ーーーーーーーーーーーーーーーー */
+
+
+/* body {
+    margin: 0;
+} */
+
+#modal-1 {
+    display: none;
+
+}
+
+#modal-1.is-open {
+    display: block;
+
+}
+
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+
+.loginfont {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.formfont {
+    color: #606266;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 11px;
+}
+
+.modal__container {
+    width: 500px;
+    height: 439px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #FFF;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+.modal__close {
+    margin: 0 0 0 auto;
+    width: 21px;
+    cursor: pointer;
+
+
+}
+
+input[type="email"],
+input[type="password"] {
+    border-radius: 4px;
+    border: 1px solid #DCDFE6;
+    background: #FFF;
+    width: 460px;
+    height: 40px;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    padding-left: 14px;
+    margin-bottom: 29px;
+    color: #333;
+}
+
+input::placeholder {
+    color: #C1C1C1;
+    font-size: clamp(12px, 1.1vw, 16px);
+
+    font-weight: 400;
+}
+
+
+
+button {
+    cursor: pointer;
+}
+
+
+
+button[type="submit"] {
+    display: block;
+    width: 130px;
+    height: 38px;
+    border-radius: 4px;
+    background: #7F886B;
+    opacity: 1;
+
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 150%;
+    /* 21px */
+    text-align: center;
+    margin: 5px auto 55px auto;
+
+}
+
+
+
+.registration {
+    color: #3E4F3C;
+    text-align: right;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 21px */
+}
+
+
+/* ーーーーーーーーーーーーーーーー */
+/* ーーーーーーーーーーーーーーーー */
+/* ーーーーーーーーーーーーーーーー */
+
+
+
+
+
+
+
+/********* fv **************/
+.fvWrapper {
+    position: relative;
+}
+
+.fv_pic_slide {
+    width: 77.92vw;
+    height: 48.96vw;
+    margin: 0 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 500;
+
+}
+
+.slide-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slider-1 24s linear infinite;
+}
+
+.slide-image:nth-child(1) {
+    background-image: url(../images/firstview1.jpg);
+    animation-delay: -2s;
+}
+
+.slide-image:nth-child(2) {
+    background-image: url(../images/firstview2_3.jpg);
+    animation-delay: 6s;
+}
+
+.slide-image:nth-child(3) {
+    background-image: url(../images/firstview3.jpg);
+    animation-delay: 14s;
+}
+
+
+@keyframes slider-1 {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    4.16% {
+        opacity: 1;
+    }
+
+    33.33% {
+        opacity: 1;
+    }
+
+    41.66% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fv_orangeback {
+
+    width: 89.24vw;
+    height: 39.93vw;
+
+    margin-top: -32vw;
+
+    background: linear-gradient(180deg, #3E4F3C 0%, #1c241b 98%);
+    //background: #3E4F3C;
+
+
+}
+
+.fv_message {
+    position: absolute;
+    width: 40.14vw;
+    min-width: 335px;
+    z-index: 500;
+    top: 34.79vw;
+    left: 9.43vw;
+    filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.7));
+}
+
+
+/****** sec1 ミッション＆ビジョン ******/
+.missionvisionWrapper {}
+
+.section_inner {
+    width: 69.44vw;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+.missionvision_bg {
+    margin-top: -51px;
+}
+
+.missionvision_bg img {
+    width: 100%;
+
+}
+
+
+h1 {
+    font-size: clamp(28px, 2.78vw, 40px);
+    text-align: center;
+    line-height: 58px;
+    margin-top: 9px;
+}
+
+span {
+    display: inline-block;
+}
+
+.title_box {
+    margin-top: 78px;
+
+}
+
+
+.title_en {
+    text-align: center;
+    width: 5%;
+
+    margin: 0 auto;
+
+}
+
+.title1_en {
+    text-align: center;
+    width: 10%;
+
+    margin: 0 auto;
+}
+
+
+
+
+.title2_en img {
+    width: 15%;
+}
+
+.mission_smallbox {
+    width: 700px;
+    margin-top: 132px;
+    margin-bottom: 111px;
+    margin-left: 20px;
+}
+
+h2 {
+    font-size: clamp(20px, 1.74vw, 24px);
+    line-height: 150%;
+    margin: 25px 0;
+}
+
+.text_box {
+    font-size: clamp(13px, 1.11vw, 16px);
+    font-weight: 400;
+    line-height: 250%;
+}
+
+.vision_smallbox {
+    width: 700px;
+    margin: 0 0 0 auto;
+    text-align: right;
+    margin-right: 43px;
+}
+
+/****** sec2 社長メッセージ ******/
+.messageWrapper {
+    position: relative;
+
+}
+
+
+.message_backgraund {
+    /* 写真600pxまではcontainで動かす、heightいらない */
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    top: 147px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -100;
+    /*文字が画像の下にいくから */
+}
+
+.message_backgraund img {
+    width: 100%;
+}
+
+.message_bgbox {
+    /* 社長の写真の右端についてネームプレート動かすために写真サイズの箱作った */
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    top: 147px;
+    height: clamp(400px, 52.2vw, 752px);
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.message_title {
+    font-size: clamp(23px, 2.2vw, 32px);
+    font-weight: 400;
+    margin: 92px 20px 30px 20px;
+
+}
+
+.message_text {
+
+    width: 55%;
+    margin: 0 20px;
+    font-weight: 400;
+    line-height: 230%;
+    font-size: clamp(13px, 1.11vw, 16px);
+    padding-bottom: 31px;
+    /*warapper伸ばすための調整 */
+}
+
+.ceo_namebox {
+    width: 298px;
+    height: 123px;
+    background: #ffffff;
+    position: absolute;
+    right: 0;
+    bottom: 53px;
+    /* 576px */
+}
+
+.ceo_post {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 16px;
+    margin-left: 26px;
+}
+
+.ceo_name {
+    margin-top: 20px;
+    margin-left: 26px;
+
+}
+
+/****** sec3 募集職種一覧 ******/
+.joblistWrapper {}
+
+
+
+.background_gray {
+    width: 87.36vw;
+
+    background: #E8DDC4;
+    opacity: .3;
+    position: absolute;
+    right: 0;
+    height: clamp(630px, 65.3vw, 941px);
+
+}
+
+.joblist_inner {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 68.6vw;
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 9.71vw;
+}
+
+
+
+.joblist_exp {
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(13px, 1.11vw, 16px);
+    text-align: center;
+    margin-top: 43px;
+    margin-bottom: 69px;
+
+}
+
+.joblist_bigbox {
+    position: relative;
+    width: clamp(315px, 31.3vw, 451px);
+    height: clamp(230px, 21.67vw, 312px);
+    /*267+45*/
+
+
+    margin-top: 4vw;
+    margin-bottom: 30px;
+    margin-left: 20px;
+
+}
+
+.joblist_pic {
+    width: clamp(301px, 29.9vw, 431px);
+    height: clamp(187px, 18.54vw, 267px);
+}
+
+.job_box {
+    height: clamp(103px, 8.6vw, 124px);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.joblist {
+    width: clamp(118px, 8.3vw, 120px);
+    height: clamp(25px, 1.74vw, 25px);
+    background: #333;
+    color: #FFF;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: clamp(25px, 1.74vw, 25px);
+    text-align: center;
+}
+
+.job_textbox {
+    display: flex;
+    width: clamp(301px, 29.9vw, 431px);
+    height: clamp(78px, 6.88vw, 99px);
+    background: #FFF;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.job_text {
+    width: 71%;
+
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    /* 20.4px */
+    margin-left: 17px;
+
+
+}
+
+.arrow {
+    margin-right: 20px;
+    width: 13px;
+}
+
+
+/****** sec4 エントリー ******/
+.entryWrapper {
+    position: relative;
+
+    padding-top: 84px;
+    color: #ffffff;
+    margin-top: 97px;
+    width: 100%;
+    height: clamp(450px, 35vw, 505px);
+    background: linear-gradient(180deg, rgba(62, 79, 60, 0.70) 0%, rgba(62, 79, 60, 0.30) 99.98%);
+    //background: rgba(62, 79, 60, 0.30);
+}
+
+.entryWrapper::after {
+    content: "";
+    background-image: url(../images/cta-bg-img.jpg);
+    width: 100%;
+    height: clamp(450px, 35vw, 505px);
+    display: inline-block;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    z-index: -500;
+
+
+
+}
+
+
+.entry_logobox {
+    width: 49px;
+    margin: 0 auto 20px auto;
+}
+
+h3 {
+    font-size: clamp(27px, 2.92vw, 42px);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 21px;
+    line-height: 61px;
+
+}
+
+.entry_textbox {
+    width: 544px;
+    font-size: clamp(13px, 1.11vw, 16px);
+    margin: 0 auto;
+    margin-bottom: 48px;
+    color: #FFF;
+    text-align: center;
+
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+}
+
+.entry_buttun {
+    margin: 0 auto;
+    width: 330px;
+    height: 84px;
+    border-radius: 42px;
+    border: 4px solid #FFF;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+}
+
+
+
+.entry_here p {
+    margin-left: 84px;
+    margin-right: 26px;
+    font-size: 18px;
+}
+
+.entry_arrow {
+    padding-top: 4px;
+}
+
+/****** フッター ******/
+.footerWrapper {
+    height: 149px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+.copyright {
+    text-align: right;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 20px;
+}
+
+
+
+
+
+/*　◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆- */
+/* エントリーページ */
+/*　◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆- */
+.entryformWrapper {
+    background: #F6F3EC;
+
+    padding-top: 172px;
+    padding-bottom: 75px;
+}
+
+/* フォーム */
+.form-wrapper {
+    width: 79.1vw;
+    max-width: 1140px;
+    height: 2309px;
+    background: #FFFFFF;
+    margin: 0 auto;
+    padding-top: 98px;
+
+}
+
+.form-wrapper form {
+    margin-top: 59px;
+}
+
+.formfont1 {
+
+
+    font-size: 36px;
+
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 48px;
+    margin-left: 100px;
+
+}
+
+.font_orange {
+    color: #3E4F3C;
+}
+
+.formfont2 {
+
+    font-size: 14px;
+
+    font-weight: 400;
+    line-height: 270%;
+    /* 37.8px */
+    margin-left: 100px;
+}
+
+
+
+.end-message {
+    display: none;
+
+
+    font-weight: 400 !important;
+    text-align: center;
+}
+
+.false-message {
+    display: none;
+
+    font-weight: 400 !important;
+    text-align: center;
+}
+
+.form_box {
+    display: flex;
+    margin-bottom: 60px;
+    margin-left: 100px;
+}
+
+
+.form_box label[for="name"],
+.form_box label[for="age"],
+.form_box label[for="mail"],
+.form_box label[for="income"],
+.form_box label[for="comment"],
+.form_box label[for="pr"],
+.form_box label[for="education"],
+.form_box label[for="achievement"] {
+    display: flex;
+    align-items: center;
+    width: 17.5vw;
+    height: 40px;
+    font-size: clamp(12px, 1.09vw, 14px);
+    font-weight: 400;
+}
+
+
+
+.form_box .label {
+    width: 17.5vw;
+    font-size: clamp(12px, 1.09vw, 14px);
+    font-weight: 400;
+}
+
+.form_box .need {
+    width: 46px;
+    height: 27px;
+    line-height: 27px;
+    background: #3E4F3C;
+    text-align: center;
+    font-size: clamp(12px, 1.09vw, 14px);
+    font-weight: 400;
+    color: #ffffff;
+    margin-right: 15px;
+
+}
+
+
+
+
+.form_box input[type="text"],
+.form_box input[type="mail"],
+.form_box textarea {
+    border-radius: 4px;
+    border: 1px solid #DCDFE6;
+    background: rgba(217, 217, 217, 0.00);
+    font-weight: 400;
+    padding-left: 14px;
+}
+
+.form_box input[type="text"],
+.form_box input[type="mail"] {
+    width: 32.3vw;
+    padding-left: 14px;
+}
+
+
+.form_box:nth-child(2) input[type="text"] {
+    width: 10.6vw;
+}
+
+.form_box:nth-child(5) input[type="text"] {
+    width: 10.6vw;
+}
+
+
+
+
+.form_box textarea {
+    height: 200px;
+    width: 32.3vw;
+    margin-top: 25px;
+}
+
+.form_box:nth-child(6) textarea {
+    height: 290px;
+}
+
+
+
+.form_smallbox {
+    width: 32.3vw;
+
+}
+
+.formfont3 {
+    color: #333;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    /* 18px */
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.form_box:nth-child(7) .formfont3 {
+    padding-top: 13px;
+
+}
+
+.form_box:nth-child(8) .formfont3 {
+    padding-top: 13px;
+
+}
+
+
+
+
+
+
+.form_box .sample_label {
+    font-size: clamp(13px, 1.25vw, 16px);
+    font-weight: 400;
+    margin-left: 18px;
+}
+
+.radio_smallbox {
+    height: 26px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* ラジオボタン */
+input[type="radio"] {
+    width: 26px;
+    /*radioボタンの横幅*/
+    height: 26px;
+    /*radioボタンの縦幅*/
+    border-radius: 100px;
+    position: relative;
+    vertical-align: sub;
+
+}
+
+input[type="radio"]::before,
+input[type="radio"]::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+input[type="radio"]::before {
+    background-color: #F3F6FA;
+    height: 26px;
+    /*radioボタンの横幅*/
+    width: 26px;
+    /*radioボタンの縦幅*/
+    left: 0px;
+}
+
+input[type="radio"]::after {
+    background-color: #3E4F3C;
+    opacity: 0;
+    /*チェックされてないradioボタンは非表示*/
+    height: 12px;
+    /*radioボタンチェック時の中点の高さ*/
+    width: 12px;
+    /*radioボタンチェック時の中点の横幅*/
+    left: 7px;
+    /*radioボタンチェック時の中点の位置*/
+}
+
+input[type="radio"]:checked::after {
+    opacity: 1;
+    /*チェックされたradioボタンは表示*/
+}
+
+
+/* チェックボックス */
+.form_checkbox {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: -11px;
+}
+
+
+/*リセット */
+input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+}
+
+/* チェックボックスデザイン */
+label[for="checkbox"] {
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 14px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+
+    /*label手前にチェックボックス用の余白を開ける*/
+    vertical-align: middle;
+    position: relative;
+    font-size: 12px;
+    font-weight: 400;
+    margin-right: 14px;
+
+}
+
+input[type="checkbox"]::before,
+input[type="checkbox"]::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+}
+
+input[type="checkbox"]::before {
+    border-radius: 2px;
+    border: 1px solid #E0E5EB;
+    background: #F9FBFD;
+    width: 16px;
+    /*チェックボックスの横幅*/
+    height: 16px;
+    /*チェックボックスの縦幅*/
+    transform: translateY(-50%);
+    top: 50%;
+    left: ;
+}
+
+input[type="checkbox"]::after {
+    border-bottom: 2px solid #666464;
+    /*チェックの太さ*/
+    border-left: 2px solid #666464;
+    /*チェックの太さ*/
+    opacity: 0;
+    /*チェック前は非表示*/
+    height: 6px;
+    /*チェックの高さ*/
+    width: 11px;
+    /*チェックの横幅*/
+    transform: rotate(-45deg);
+    top: -5px;
+    /*チェック時の位置調整*/
+    left: 3px;
+    /*チェック時の位置調整*/
+}
+
+input[type="checkbox"]:checked::after {
+    opacity: 1;
+    /*チェック後表示*/
+}
+
+
+.submit-btn {
+    display: flex;
+    width: 330px;
+    height: 84px;
+    flex-shrink: 0;
+    color: #ffffff;
+
+    font-size: 18px;
+    border-radius: 42px;
+    background: #7F886B;
+    margin: 98px auto 0 auto;
+    opacity: 0.2;
+    align-items: center;
+
+}
+
+.submit-btn p {
+    margin-left: 102px;
+}
+
+.submit-btn img {
+    width: 16px;
+    margin-left: 44px;
+}
+
+
+/*　◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆- */
+/* 募集要項ページ */
+/*　◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆-◆- */
+.job_mainvisual_box {
+
+    margin: 0 auto;
+    margin-top: 101px;
+    position: relative;
+    height: 100%;
+    padding-bottom: 5.76vw;
+    overflow: hidden;
+
+
+
+}
+
+.job_mainvisual_box::before {
+    content: '';
+    position: absolute;
+    background: #F3ECDA;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    margin-top: clamp(150px, 15.07vw, 217px);
+}
+
+.mainvisual_pic {
+    width: 86.1vw;
+    max-width: 1240px;
+
+
+    height: clamp(300px, 30.1vw, 434px);
+    margin: 0 auto;
+    margin-bottom: 5.76vw;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.mainvisual_pic::before {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.50);
+    height: clamp(300px, 30.1vw, 434px);
+    width: 100%;
+
+}
+
+.mainvisual_pic img {
+    height: clamp(300px, 30.1vw, 434px);
+    object-fit: cover;
+    width: 100%;
+    object-position: 0 -7.6vw;
+}
+
+.mv_font1 {
+    position: absolute;
+    color: #FF8B65;
+
+    font-size: clamp(12px, 0.97vw, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    top: 36.1%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.mv_font2 {
+    color: #FFF;
+
+    font-size: clamp(22px, 2.9vw, 42px);
+
+    font-weight: 400;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+
+
+.job_summary {
+    width: 52.08vw;
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto;
+    color: #3B320F;
+
+    font-size: clamp(13px, 1.25vw, 18px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+    /* 36px */
+}
+
+.conditionBigbox {
+    padding-bottom: 188px;
+}
+
+h4 {
+    color: #000;
+    text-align: center;
+
+    font-size: clamp(18px, 2.2vw, 32px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+    /* 64px */
+    margin: 75px auto;
+}
+
+.condition {
+    width: 77.9vw;
+    max-width: 1122px;
+    margin: 0 auto;
+
+}
+
+.condition tr {
+    border-top: 1px solid #E7E7E7;
+    border-bottom: 1px solid #E7E7E7;
+
+}
+
+.condition th {
+    width: 13.89vw;
+    background: #F5F5F5;
+    vertical-align: middle;
+    color: #333;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 200%;
+    /* 28px */
+    padding: 0 10px 0 40px;
+    min-width: 150px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.condition td {
+    padding: 40px;
+    color: #333;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+    /* 28px */
+    font-family: 'Noto Sans JP', sans-serif;
+
+}
+
+/****************************************/
+/************* メディアクエリ *************/
+@media (min-width: 1441px) {
+
+    .mainvisual_pic img {
+
+        object-position: 0 -161px !important;
+    }
+
+
+}
+
+@media (max-width: 1400px) {
+    .entryWrapper {
+        padding-top: 65px;
+    }
+}
+
+@media (max-width: 1180px) {
+
+    /*ーーーーーー ヘッダー ーーーーーー*/
+    .pc_nav {
+        font-size: 12px;
+    }
+
+    .list3 li {
+        margin-right: 18px;
+
+    }
+
+    .list2_1,
+    .list2_2 {
+        width: 145px;
+        height: 45px;
+        line-height: 45px;
+        margin-right: 8px;
+
+    }
+
+    /*ーーー ミッション＆ビジョン ーーー*/
+    .mission_smallbox,
+    .vision_smallbox {
+        width: 550px;
+    }
+
+    .mission_smallbox {
+        margin-left: 0;
+    }
+
+    .vision_smallbox {
+        margin-right: 0;
+    }
+
+    /*ーーー 社長メッセージ ーーー*/
+    /* containで動かすけど、下から部分透過させるから写真サイズのheightいる。
+    写真サイズ変わるからvwじゃないと透過がついて動かない */
+
+    .section_inner:nth-of-type(4) {
+        margin-top: 400px;
+    }
+
+    .message_backgraund {
+        height: 52vw;
+    }
+
+    .message_bgbox {
+        height: 52vw;
+    }
+
+
+    .message_backgraund img {
+        height: 52vw;
+        mask-image: linear-gradient(270deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9) 65%, transparent);
+        -webkit-mask-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9) 65%, transparent);
+
+    }
+
+    .message_text {
+        width: 93%;
+    }
+
+    .ceo_namebox {
+        top: 120px;
+        left: 14%;
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /*ーーーーーー 募集職種 ーーーーーー*/
+    .joblist_bigbox {
+
+        margin: 10px;
+        margin-top: 40px;
+
+
+    }
+
+    .background_gray {
+        width: 96vw;
+    }
+
+    .joblist_inner {
+        width: 90vw;
+        justify-content: space-around;
+    }
+
+
+
+    .job_text {
+        width: 82%;
+        margin-left: 10px;
+    }
+
+    /* ◆募集要項ページ◆ */
+    .job_summary {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 870px) {
+
+    /*ーーーーーー ヘッダー ーーーーーー*/
+    .headerWrapper {
+        position: fixed;
+        background-color: #ffffff;
+        height: 60px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo_box {
+
+        margin-left: 18px;
+        height: 36px;
+    }
+
+    .logo {
+        margin-right: 11px;
+        width: 31px;
+    }
+
+    .logo_textbox {
+        height: 36px;
+    }
+
+    .logo_en {
+        font-size: 14px;
+        line-height: normal;
+        padding-top: 0px;
+    }
+
+    .logo_ja {
+        font-size: 10px;
+        line-height: normal;
+    }
+
+    .pc_nav {
+        display: none;
+    }
+
+    .sp_nav {
+        background-color: #ffffff;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        font-weight: 400;
+    }
+
+    nav {
+        display: block;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .list3 li {
+        margin: 30px auto;
+    }
+
+
+    ul {
+        display: block;
+    }
+
+    .list2_1,
+    .list2_2 {
+        width: 170px;
+        color: #ffffff;
+        margin: 0 auto;
+
+
+    }
+
+    .list2_2 {
+        margin-top: 30px;
+    }
+
+
+
+
+    /******ハンバーガーメニュー*******/
+    .hm_menu {
+        display: inline;
+        display: block;
+        position: fixed;
+        z-index: 2500;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        right: 0;
+        margin: 24px 20px;
+    }
+
+    .hm_menu span {
+        width: 20px;
+        border: 1px solid #333;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: 0.3s;
+
+    }
+
+    /*三本線クリック前  */
+
+    .hm_menu span:nth-child(2) {
+        top: 6px;
+    }
+
+    .hm_menu span:nth-child(3) {
+        top: 12px;
+    }
+
+    /*三本線クリック後*/
+    .active:nth-child(1) {
+        border-color: #333;
+        top: 0px;
+        right: 0px;
+        width: 20px;
+        transform: rotate(-45deg);
+        transform-origin: 90% 100%;
+    }
+
+    .active:nth-child(2) {
+        opacity: 0;
+    }
+
+    .active:nth-child(3) {
+        border-color: #333;
+        /*li22+*/
+        /* background-color: #000000; */
+        /*li22+*/
+        width: 20px;
+        top: 12px !important;
+        /*←.hm_menu .active～にするか、importantつけないと効かない。 */
+        right: 0px;
+        transform: rotate(45deg);
+        transform-origin: 90% 0;
+    }
+
+    /* ハンバーガーここまで */
+
+
+
+
+
+
+    /*ーーーーー FV ーーーーー*/
+    .fv_pic_slide {
+
+        height: 460px;
+        margin-top: 74px;
+    }
+
+
+    .fv_orangeback {
+        width: 84.27vw;
+        height: 460px;
+        margin-top: -377px;
+
+    }
+
+    .fv_message {
+        top: 360px;
+        left: 40px;
+    }
+
+    /*ーーー ミッション＆ビジョン ーーー*/
+    .section_inner {
+        width: 90vw;
+    }
+
+    .mission_smallbox {
+        margin-top: 100px;
+
+    }
+
+    .title2_en img {
+        width: 17%;
+    }
+
+    /*ーーー 社長メッセージ ーーー*/
+
+
+    .section_inner:nth-of-type(4) {
+        margin-top: 300px;
+    }
+
+    .ceo_namebox {
+        width: 230px;
+        height: 100px;
+        top: 100px;
+    }
+
+    .ceo_post {
+        font-size: 16px;
+        margin-top: 13px;
+        margin-left: 26px;
+    }
+
+    .ceo_name {
+        margin-top: 13px;
+        margin-left: 26px;
+        width: 130px;
+    }
+
+    /*ーーー 募集職種一覧 ーーー*/
+    .joblist_exp {
+        margin-top: 35px;
+        margin-bottom: 25px;
+    }
+
+    /*ーーー エントリー ーーー*/
+    .entry_buttun {
+        margin: 0 auto;
+        width: 250px;
+        height: 60px;
+        border-radius: 42px;
+        border: 2px solid #FFF;
+    }
+
+    .entry_here p {
+        margin-left: 53px;
+        margin-right: 8px;
+        font-size: 14px;
+    }
+
+    /* エントリーページ */
+    .form-wrapper {
+        width: 80%;
+        min-width: 400px;
+        height: 2050px;
+    }
+
+    /* エントリーフォーム */
+    .form-wrapper {
+        padding-top: 35px;
+    }
+
+    .formfont1 {
+        font-size: 26px;
+
+        margin-bottom: 48px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .formfont2 {
+        font-size: 12px;
+
+        line-height: 196%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .form_box {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: 350px;
+
+    }
+
+    .form_box label[for="name"],
+    .form_box label[for="age"],
+    .form_box label[for="mail"],
+    .form_box label[for="income"],
+    .form_box label[for="comment"],
+    .form_box label[for="pr"],
+    .form_box label[for="education"],
+    .form_box label[for="achievement"] {
+        width: 350px;
+    }
+
+    .form_box input[type="text"],
+    .form_box input[type="mail"] {
+        width: 330px;
+        height: 30px;
+        margin-top: 10px;
+    }
+
+    .form_box:nth-child(2) input[type="text"] {
+        width: 125px;
+    }
+
+    .form_box .label {
+        width: 350px;
+    }
+
+    .form_box .radio_box {
+        margin-top: 15px;
+    }
+
+    .form_box:nth-child(5) input[type="text"] {
+        width: 125px;
+    }
+
+    .form_box:nth-child(7) .formfont3 {
+        padding-top: 5px;
+    }
+
+    .form_box:nth-child(8) .formfont3 {
+        padding-top: 5px;
+    }
+
+
+
+    .form_smallbox {
+        width: 330px;
+    }
+
+    .form_box textarea {
+        width: 330px;
+        margin-top: 10px;
+    }
+
+    .form_box:nth-child(6) textarea {
+        height: 215px;
+        margin-top: 10px;
+    }
+
+    .submit-btn {
+
+        width: 200px;
+        height: 45px;
+
+        font-size: 12px;
+
+        margin: 25px auto 0 auto;
+
+    }
+
+    .submit-btn p {
+        margin-left: 52px;
+
+    }
+
+    submit-btn img {
+        width: 16px;
+        margin-left: 16px;
+    }
+
+
+    /*ーーー フッターー ーーー*/
+    .footerWrapper {
+        height: 100px;
+    }
+
+    /* ◆募集要項ページ ◆*/
+    .condition {
+        width: 90%;
+    }
+
+    .condition th {
+        display: block;
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+        border-bottom: 1px solid #E7E7E7;
+
+
+    }
+
+    .condition td {
+        display: block;
+        padding: 20px 40px;
+
+    }
+
+    h4 {
+        margin: 30px auto;
+    }
+
+
+}
+
+
+
+@media (max-width: 744px) {
+
+
+    .joblist_inner {
+        height: 1200px;
+    }
+
+    .background_gray {
+        height: 1200px;
+    }
+
+    .mainvisual_pic img {
+
+        object-position: 0 0
+    }
+
+    .title1_en {
+        width: 15%;
+    }
+
+    .title_en {
+        width: 8%;
+    }
+
+
+    /* ◆エントリーページ◆ */
+    .entryformWrapper {
+        padding-top: 120px;
+    }
+
+    /* ◆募集要項ページ◆ */
+    .job_summary {
+        width: 80vw;
+    }
+
+    .conditionBigbox {
+        padding-bottom: 100px;
+    }
+
+
+
+}
+
+@media (max-width: 600px) {
+
+    /*ーーー モーダル ーーー*/
+    .modal__container {
+        width: 350px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        width: 300px;
+    }
+
+    /*ーーー ミッション＆ビジョン ーーー*/
+    h1 {
+        line-height: 40px;
+    }
+
+    .mission_smallbox,
+    .vision_smallbox {
+        width: 100%;
+    }
+
+    .mission_smallbox {
+        margin-top: 60px;
+        margin-bottom: 70px;
+    }
+
+    .title2_en img {
+        width: 25%;
+    }
+
+
+    .missionvision_bg {
+        margin-top: 0px;
+    }
+
+    .missionvision_bg img {
+        object-fit: cover;
+        height: 170px;
+    }
+
+    .text_box {
+        line-height: 210%;
+    }
+
+    /*ーーー 社長メッセージ ーーー*/
+
+    .message_backgraund {
+        width: 100%;
+        height: 308px;
+        overflow: hidden;
+    }
+
+    .message_backgraund img {
+        width: 600px;
+        /* 1440px*0.41 */
+        height: 308px;
+        /* 752px*0.41 */
+        object-fit: cover;
+        /* coverにしないと縮尺歪む */
+        object-position: right top;
+
+    }
+
+    .message_bgbox {
+        height: 308px;
+    }
+
+    .message_title {
+        line-height: 150%;
+    }
+
+    .ceo_namebox {
+        top: 80px;
+        left: 5%;
+    }
+
+    /*ーーーーーー エントリー ーーーーーー*/
+    .entryWrapper {
+        padding-top: 20px;
+    }
+
+    .entry_textbox {
+        width: 340px;
+    }
+
+    .entryWrapper::after {
+        background-position: 20% top;
+    }
+
+    /*ーーーーーー フッター　ーーーーーー*/
+    .footerWrapper {
+        display: grid;
+        height: 100px;
+        justify-content: center;
+    }
+
+    .footerWrapper .logo_box {
+        margin-left: 25%;
+        margin-top: 20px;
+    }
+
+    /* ◆募集職種ページ ◆*/
+    .job_mainvisual_box {
+        padding-bottom: 50px;
+    }
+}
+
+
+@media (max-width: 428px) {
+
+    /*ーーーーーー ヘッダー ーーーーーー*/
+    .headerWrapper {
+        height: 60px;
+    }
+
+    /*ーーーーー FV ーーーーー*/
+
+    .fv_pic_slide {
+        width: 84vw;
+        height: 545px;
+    }
+
+    .fv_orangeback {
+        width: 84.27vw;
+        height: 522px;
+        margin-top: -474px;
+    }
+
+    .fv_message {
+        top: 411px;
+        left: 20px;
+    }
+
+    /*ーーー ミッション＆ビジョン ーーー*/
+    .vision_smallbox {
+        text-align: left;
+    }
+
+    .missionvision_bg img {
+
+        height: 150px;
+    }
+
+    .title_box {
+        margin-top: 40px;
+    }
+
+    .mission_smallbox {
+        margin-top: 40px;
+        margin-bottom: 45px;
+    }
+
+    .title1_en {
+        width: 21%;
+    }
+
+    .title_en {
+        width: 13%;
+    }
+
+
+
+    /*ーーー 社長メッセージ ーーー*/
+
+    .message_backgraund {
+        width: 100%;
+
+        height: 263px;
+        top: 100px;
+
+    }
+
+    .message_backgraund img {
+        width: 504px;
+        /* *0.35 */
+        height: 263px;
+    }
+
+    .message_bgbox {
+        height: 263px;
+    }
+
+    .section_inner:nth-of-type(4) {
+        margin-top: 260px;
+    }
+
+    .ceo_namebox {
+        top: 50px;
+        left: 3%;
+    }
+
+
+    .message_title {
+        margin-bottom: 20px;
+    }
+
+    /* エントリーフォーム */
+    .entryformWrapper {
+
+        padding-top: 115px;
+    }
+
+    .entryWrapper {
+        padding-top: 20px;
+    }
+
+    h3 {
+        line-height: 50px;
+    }
+
+    .form-wrapper {
+        padding-top: 35px;
+        height: 2150px;
+        min-width: inherit;
+    }
+
+    .formfont1 {
+        font-size: 26px;
+
+        margin-bottom: 48px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .formfont2 {
+        font-size: 12px;
+
+        line-height: 196%;
+        margin: 20px;
+    }
+
+    .form_box {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: 245px;
+
+    }
+
+    .form_box label[for="name"],
+    .form_box label[for="age"],
+    .form_box label[for="mail"],
+    .form_box label[for="income"],
+    .form_box label[for="comment"],
+    .form_box label[for="pr"],
+    .form_box label[for="education"],
+    .form_box label[for="achievement"] {
+        width: 245px;
+    }
+
+    .form_box input[type="text"],
+    .form_box input[type="mail"] {
+        width: 245px;
+        height: 30px;
+
+    }
+
+    .form_box:nth-child(2) input[type="text"] {
+        width: 125px;
+    }
+
+    .form_box .label {
+        width: 245px;
+    }
+
+    .form_box .radio_box {
+        margin-top: 15px;
+    }
+
+    .form_box:nth-child(5) input[type="text"] {
+        width: 125px;
+    }
+
+    .form_smallbox {
+        width: 245px;
+    }
+
+    .form_box textarea {
+        width: 245px;
+    }
+
+    .form_box:nth-child(6) textarea {
+        height: 215px;
+    }
+
+    .submit-btn {
+
+        width: 200px;
+        height: 45px;
+
+        font-size: 12px;
+
+        margin: 25px auto 0 auto;
+
+    }
+
+    .submit-btn p {
+        margin-left: 52px;
+
+    }
+
+    submit-btn img {
+        width: 16px;
+        margin-left: 16px;
+    }
+
+    /* ◆ 応募職種ページ◆ */
+    .condition td {
+        padding: 20px 10px;
+    }
+
+    .condition th {
+        padding: 0 10px;
+    }
+
+
+
+}

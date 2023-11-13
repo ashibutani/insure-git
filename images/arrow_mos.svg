@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 124.37">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #7f886b;
+      }
+
+      .cls-2 {
+        font-family: HiraMaruProN-W4-83pv-RKSJ-H, 'Hiragino Maru Gothic ProN';
+        font-size: 97.17px;
+        letter-spacing: .04em;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <g>
+      <circle class="cls-3" cx="48" cy="61.93" r="47.5"/>
+      <path class="cls-1" d="M48,14.93c25.92,0,47,21.08,47,47s-21.08,47-47,47S1,87.84,1,61.93,22.08,14.93,48,14.93m0-1C21.49,13.93,0,35.42,0,61.93s21.49,48,48,48,48-21.49,48-48S74.51,13.93,48,13.93h0Z"/>
+    </g>
+    <text class="cls-2" transform="translate(34.11 87.01) scale(.69 1)"><tspan x="0" y="0">&gt;</tspan></text>
+  </g>
+</svg>
