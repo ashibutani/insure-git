@@ -452,7 +452,7 @@ button[type="submit"] {
 }
 
 
-h1 {
+h2 {
     font-size: clamp(28px, 2.78vw, 40px);
     text-align: center;
     line-height: 58px;
@@ -498,7 +498,7 @@ span {
     margin-left: 20px;
 }
 
-h2 {
+h3 {
     font-size: clamp(20px, 1.74vw, 24px);
     line-height: 150%;
     margin: 25px 0;
@@ -737,11 +737,12 @@ h2 {
     margin: 0 auto 20px auto;
 }
 
-h3 {
+.h3-message {
     font-size: clamp(27px, 2.92vw, 42px);
     font-weight: 700;
     text-align: center;
     margin-bottom: 21px;
+    margin-top: 0;
     line-height: 61px;
 
 }
@@ -1881,11 +1882,11 @@ h4 {
     }
 
     /*ーーー ミッション＆ビジョン ーーー*/
-    h1 {
+    h2 {
         line-height: 40px;
     }
 
-    h2 {
+    h3 {
         margin: 15px 0;
     }
 
@@ -2015,7 +2016,7 @@ h4 {
     }
 
     /*ーーー ミッション＆ビジョン ーーー*/
-    h2 {
+    h3 {
         margin-top: 7px;
     }
 
@@ -2095,7 +2096,7 @@ h4 {
         padding-top: 20px;
     }
 
-    h3 {
+    .h3-message {
         line-height: 50px;
     }
 
